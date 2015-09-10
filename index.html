@@ -24,6 +24,9 @@
             <div class='text-center'><b>Select Category:</b>
                 <select ng-init="ctrl.debtDD = 'All'" ng-model="ctrl.debtDD" ng-options="name for name in ctrl.debt"></select>
             </div>
+            <div class='text-center'><b>Select Severity:</b>
+                <select ng-init="ctrl.severityDD = 'All'" ng-change="ctrl.filterBySeverity()" ng-model="ctrl.severityDD" ng-options="name for name in ctrl.severityArr"></select>
+            </div>
             <div class='text-center'>
                 <input size='120' type='text' ng-change="ctrl.debtDD='All'" ng-model='ctrl.searchTerm' placeholder='enter text to search' />
             </div>

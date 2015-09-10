@@ -7,9 +7,11 @@ app.controller("myCtrl", function ($scope) {
     var vm = this;
     vm.java = "";
     vm.debt = ["All", "Maintainability", "Understandability", "Changeability", "Data", "Readability", "Reliability", "Architecture", "Instruction", "Efficiency", "Processor use", "Logic", "Testability", "Unit level", "Exception handling", "Memory use", "Portability", "Compiler", "Security", "Errors", "Synchronization", "API abuse", "Security features", "OS", "Hardware", "Software", "Input validation and representation", "Language", "Unit tests coverage"];
+    vm.severityArr = ["All", "Info", "Minor", "Major", "Critical", "Blocker", ]
     vm.java = java;
     $scope.$watch('ctrl.debtDD', function () {
         vm.searchTerm = '';
+        vm.severityDD = 'All';
         vm.java = java.filter(function (obj) {
             if (vm.debtDD == "All") {
                 return true;
@@ -19,6 +21,15 @@ app.controller("myCtrl", function ($scope) {
 
         });
     });
+    vm.filterBySeverity = function () {
+        vm.java = vm.java.filter(function (obj) {
+            if (vm.severityDD == "All") {
+                return true;
+            } else {
+                return obj.rule.severity.toLowerCase() == vm.severityDD.toLowerCase();
+            }
+        });
+    };
     vm.openPopUp = function (event, data) {
         mevent = event;
         vm.title = data.name;
