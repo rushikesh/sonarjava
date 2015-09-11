@@ -27,6 +27,10 @@
     color: blue;
 }
 
+li {
+    margin-bottom: 1em;
+}
+
 body {
     background: url('../img/sonar.png') no-repeat right center fixed;
 }
