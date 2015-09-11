@@ -31,6 +31,7 @@ app.controller("myCtrl", function ($scope) {
         });
     };
     vm.openPopUp = function (event, data) {
+        highlight(event.target);
         mevent = event;
         vm.title = data.name;
         vm.severity = data.severity;
@@ -39,6 +40,11 @@ app.controller("myCtrl", function ($scope) {
         vm.desc = data.htmlDesc;
         $('#myModal').modal('show');
     };
+    //HATE THIS,need to find a better way to do in angular
+    function highlight(o){
+        $('li a').removeClass('highLightColor');
+        $(o).addClass('highLightColor');
+    }
 });
 
 $(document).ready(function () {
