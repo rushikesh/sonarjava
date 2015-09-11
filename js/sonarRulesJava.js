@@ -12,6 +12,7 @@ app.controller("myCtrl", function ($scope) {
     $scope.$watch('ctrl.debtDD', function () {
         vm.searchTerm = '';
         vm.severityDD = 'All';
+        vm.selected=-1;
         vm.java = java.filter(function (obj) {
             if (vm.debtDD == "All") {
                 return true;
