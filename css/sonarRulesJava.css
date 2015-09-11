@@ -12,9 +12,21 @@
     top: 10em;
     padding-top: 2em;
 }
-.highLightColor{
- background-color: greenyellow;   
+
+.highLightColor {
+    background-color: greenyellow;
 }
+
+.bigFont {
+    font-size: 1.2em;
+    color: red
+}
+
+.boldFont {
+    font-weight: bold;
+    color: blue;
+}
+
 body {
     background: url('../img/sonar.png') no-repeat right center fixed;
 }

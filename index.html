@@ -35,7 +35,7 @@
     <br/>
     <div class="container cstmBody">
         <ol>
-            <li ng-repeat="j in ctrl.java | filter : ctrl.searchTerm"><a ng-click='ctrl.openPopUp($event,j.rule,$index)' ng-href='#' ng-class="{highLightColor: $index == ctrl.selected}" >{{j.rule.name}}</a>
+            <li ng-repeat="j in ctrl.java | filter : ctrl.searchTerm"><a ng-click='ctrl.openPopUp($event,j.rule,$index)' ng-href='#' ng-class="{highLightColor: $index == ctrl.selected}">{{j.rule.name}}</a>
             </li>
         </ol>
     </div>
@@ -46,12 +46,15 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">{{ctrl.title}}</h4>
+                    <div class="bigFont">
+                        <span class="boldFont">Severity:</span>{{ctrl.severity}} <span class="boldFont">Category:</span>{{ctrl.debtChar}}
+                        <span class="glyphicon glyphicon-arrow-right"></span> {{ctrl.debtSubChar}}
+                        <span class="boldFont">Debt Cost:</span>{{ctrl.debtCost}}
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <h4 class='answer'>Severity:{{ctrl.severity}}</h4>
-                    <h4 class='answer'>Category:{{ctrl.debtChar}}</h4>
-                    <h4 class='answer'>Debt Cost:{{ctrl.debtCost}}</h4>
-                    <div class='answer' ng-bind-html="ctrl.desc"></div>
+
+                    <div ng-bind-html="ctrl.desc"></div>
                 </div>
             </div>
         </div>

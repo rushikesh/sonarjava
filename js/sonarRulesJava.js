@@ -36,7 +36,8 @@ app.controller("myCtrl", function ($scope) {
         vm.selected=index;
         vm.title = data.name;
         vm.severity = data.severity;
-        vm.debtChar = data.debtCharName + '->' + data.debtSubCharName;
+        vm.debtChar = data.debtCharName;
+        vm.debtSubChar=data.debtSubCharName;
         vm.debtCost = data.debtRemFnOffset;
         vm.desc = data.htmlDesc;
         $('#myModal').modal('show');
