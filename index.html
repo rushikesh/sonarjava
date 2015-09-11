@@ -35,7 +35,7 @@
     <br/>
     <div class="container cstmBody">
         <ol>
-            <li ng-repeat="j in ctrl.java | filter : ctrl.searchTerm"><a ng-click='ctrl.openPopUp($event,j.rule)' ng-href='#'>{{j.rule.name}}</a>
+            <li ng-repeat="j in ctrl.java | filter : ctrl.searchTerm"><a ng-click='ctrl.openPopUp($event,j.rule,$index)' ng-href='#' ng-class="{highLightColor: $index == ctrl.selected}" >{{j.rule.name}}</a>
             </li>
         </ol>
     </div>
