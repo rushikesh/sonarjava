@@ -12,7 +12,7 @@ app.controller("myCtrl", function ($scope) {
     $scope.$watch('ctrl.debtDD', function () {
         vm.searchTerm = '';
         vm.severityDD = 'All';
-        vm.selected=-1;
+        vm.selected = -1;
         vm.java = java.filter(function (obj) {
             if (vm.debtDD == "All") {
                 return true;
@@ -31,13 +31,13 @@ app.controller("myCtrl", function ($scope) {
             }
         });
     };
-    vm.openPopUp = function (event, data,index) {
+    vm.openPopUp = function (event, data, index) {
         mevent = event;
-        vm.selected=index;
+        vm.selected = index;
         vm.title = data.name;
         vm.severity = data.severity;
         vm.debtChar = data.debtCharName;
-        vm.debtSubChar=data.debtSubCharName;
+        vm.debtSubChar = data.debtSubCharName;
         vm.debtCost = data.debtRemFnOffset;
         vm.desc = data.htmlDesc;
         $('#myModal').modal('show');
@@ -46,6 +46,6 @@ app.controller("myCtrl", function ($scope) {
 
 $(document).ready(function () {
     $("#myModal").on('hidden.bs.modal', function () {
-        window.scrollTo(mevent.pageX, mevent.pageY - 800);
+        window.scrollTo(mevent.pageX, mevent.pageY - 400);
     });
 });
